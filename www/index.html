@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=480, height=800, user-scalable=no" />
+
+        <title>Hello World</title>
+		
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		
+		<!-- Included libs -->
+        <script type="text/javascript" src="cordova-2.1.0.js"></script>
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/jquery.tmpl.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.1.js"></script>
+
+		<!-- Our logic -->
+        <script type="text/javascript" charset="utf-8" src="viewModel/ApplicationViewModel.js"></script>
+        <script type="text/javascript" charset="utf-8" src="viewModel/BeerOverviewViewModel.js"></script>
+        <script type="text/javascript" charset="utf-8" src="viewModel/BeerDetailViewModel.js"></script>
+
+        <script type="text/javascript" src="js/index.js"></script>
+
+    </head>
+
+    <body>
+
+        <script type="text/x-jquery-tmpl" charset="utf-8" id="beerOverviewView">
+            <div>
+                <h2>BIER KUT!</h2>
+                <div>
+                    Dit is de beerOverviewView.
+                </div>
+                    <form data-bind="submit: pushNextView">
+                        <button type="submit"</button>  
+                    </form>
+            </div>
+        </script>
+    
+        <script type="text/x-jquery-tmpl" charset="utf-8" id="beerDetailView">
+            <div>
+                <h2>Detail view!</h2>
+                <div>
+                    Dit is de beerDetailView.
+                </div>
+            </div>
+        </script>
+
+        <h1>Bier app</h1>
+
+        <div class="app"
+            data-bind="template: {name: templateSelector,
+                                    foreach: viewModelBackStack}">
+        </div>
+
+    </body>
+</html>
